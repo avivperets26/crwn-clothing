@@ -9,7 +9,6 @@ import Header from "./components/header/header.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
 import { auth, createUserProfileDucoment } from "./firebase/firebase.utils";
 import { setCurrentUser } from "./redux/user/user.actions";
-import { redirect } from "statuses";
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -45,7 +44,7 @@ class App extends React.Component {
             path="/signin"
             render={() =>
               this.props.currentUser ? (
-                <redirect to="/" />
+                <Redirect to="/" />
               ) : (
                 <SignInAndSignUpPage />
               )
