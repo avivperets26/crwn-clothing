@@ -14,7 +14,7 @@ const config = {
   measurementId: "G-GFRRZYSG40",
 };
 
-export const createUserProfileDucoment = async (userAuth, additionalData) => {
+export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
 
   const userRef = firestore.doc(`users/${userAuth.uid}`);
@@ -42,5 +42,5 @@ export const firestore = firebase.firestore();
 
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" });
-export const SignInWithGoogle = () => auth.signInWithPopup(provider);
+export const signInWithGoogle = () => auth.signInWithPopup(provider);
 export default firebase;
